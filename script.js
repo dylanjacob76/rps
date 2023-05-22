@@ -1,7 +1,3 @@
-// Create a function to generate the computerChoice
-// Create a function that plays a round and takes in the playerChoice as well as the computerChoice
-// Compare the two choices
-// Return (alert winner)
 const choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
@@ -9,3 +5,16 @@ function getComputerChoice() {
   return choices[randomChoice];
 }
 
+function playRound(playerChoice, computerChoice) {
+  if (playerChoice == computerChoice) {
+    return "It's a tie!";
+  } else if (playerChoice == "Rock" && computerChoice == "Scissors" || playerChoice == "Paper" && computerChoice == "Rock" || playerChoice == "Scissors" && computerChoice == "Paper") {
+    return "You win!";
+  } else {
+    return "You lost!";
+  }
+
+}
+
+const playerChoice = "Rock";
+console.log(playRound(playerChoice, getComputerChoice()))
